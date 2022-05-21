@@ -14,6 +14,9 @@ public class Post {
     private String title;
     private String lead;
 
+    @ManyToOne
+    private Category category;
+
     @Lob
     @Column(length=1000000)
     private String body;
@@ -87,5 +90,13 @@ public class Post {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }
